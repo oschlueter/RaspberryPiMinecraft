@@ -1,8 +1,8 @@
 #!/bin/bash
 # Minecraft Server Installation Script - James A. Chambers - https://www.jamesachambers.com
-# GitHub Repository: https://github.com/TheRemote/RaspberryPiMinecraft
+# GitHub Repository: https://github.com/oschlueter/RaspberryPiMinecraft
 echo "Minecraft Server installation script by James Chambers - February 18th 2019"
-echo "Latest version always at https://github.com/TheRemote/RaspberryPiMinecraft"
+echo "Latest version always at https://github.com/oschlueter/RaspberryPiMinecraft"
 echo "Don't forget to set up port forwarding on your router!  The default port is 25565"
 
 # Install screen to run minecraft in the background
@@ -41,22 +41,22 @@ if [ -d "minecraft" ]; then
 
   # Download start.sh from repository
   echo "Grabbing start.sh from repository..."
-  wget -O start.sh https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/start.sh
+  wget -O start.sh https://raw.githubusercontent.com/oschlueter/RaspberryPiMinecraft/master/start.sh
   chmod +x start.sh
 
   # Download stop.sh from repository
   echo "Grabbing stop.sh from repository..."
-  wget -O stop.sh https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/stop.sh
+  wget -O stop.sh https://raw.githubusercontent.com/oschlueter/RaspberryPiMinecraft/master/stop.sh
   chmod +x stop.sh
 
   # Download restart.sh from repository
   echo "Grabbing restart.sh from repository..."
-  wget -O restart.sh https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/restart.sh
+  wget -O restart.sh https://raw.githubusercontent.com/oschlueter/RaspberryPiMinecraft/master/restart.sh
   chmod +x restart.sh
 
   # Service configuration
   sudo rm /etc/systemd/system/minecraft.service
-  sudo wget -O /etc/systemd/system/minecraft.service https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/minecraft.service
+  sudo wget -O /etc/systemd/system/minecraft.service https://raw.githubusercontent.com/oschlueter/RaspberryPiMinecraft/master/minecraft.service
   sudo chmod +x /etc/systemd/system/minecraft.service
   sudo systemctl daemon-reload
   echo -n "Start Minecraft server at startup automatically (y/n)?"
@@ -142,7 +142,7 @@ mkdir backups
 
 # Retrieve latest build of Paper minecraft server
 echo "Getting latest Paper Minecraft server..."
-wget -O paperclip.jar https://papermc.io/ci/job/Paper-1.13/lastSuccessfulBuild/artifact/paperclip.jar
+wget -O paperclip.jar https://papermc.io/ci/job/Paper/lastSuccessfulBuild/artifact/paperclip.jar
 
 # Run the Minecraft server for the first time which will build the modified server and exit saying the EULA needs to be accepted
 echo "Building the Minecraft server..."
@@ -154,17 +154,17 @@ echo eula=true > eula.txt
 
 # Download start.sh from repository
 echo "Grabbing start.sh from repository..."
-wget -O start.sh https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/start.sh
+wget -O start.sh https://raw.githubusercontent.com/oschlueter/RaspberryPiMinecraft/master/start.sh
 chmod +x start.sh
 
 # Download stop.sh from repository
 echo "Grabbing stop.sh from repository..."
-wget -O stop.sh https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/stop.sh
+wget -O stop.sh https://raw.githubusercontent.com/oschlueter/RaspberryPiMinecraft/master/stop.sh
 chmod +x stop.sh
 
 # Download restart.sh from repository
 echo "Grabbing restart.sh from repository..."
-wget -O restart.sh https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/restart.sh
+wget -O restart.sh https://raw.githubusercontent.com/oschlueter/RaspberryPiMinecraft/master/restart.sh
 chmod +x restart.sh
 
 # Server configuration
@@ -174,7 +174,7 @@ echo "server-name=$servername" >> server.properties
 echo "motd=$servername" >> server.properties
 
 # Service configuration
-sudo wget -O /etc/systemd/system/minecraft.service https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/minecraft.service
+sudo wget -O /etc/systemd/system/minecraft.service https://raw.githubusercontent.com/oschlueter/RaspberryPiMinecraft/master/minecraft.service
 sudo chmod +x /etc/systemd/system/minecraft.service
 sudo systemctl daemon-reload
 echo -n "Start Minecraft server at startup automatically (y/n)?"

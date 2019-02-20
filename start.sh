@@ -35,11 +35,11 @@ tar -pzvcf backups/$(date +%Y.%m.%d.%H.%M.%S).tar.gz world world_nether world_th
 # Update paperclip.jar
 echo "Updating to most recent paperclip version ..."
 # Test internet connectivity first
-/usr/bin/wget --spider --quiet https://papermc.io/ci/job/Paper-1.13/lastSuccessfulBuild/artifact/paperclip.jar
+/usr/bin/wget --spider --quiet https://papermc.io/ci/job/Paper/lastSuccessfulBuild/artifact/paperclip.jar
 if [ "$?" != 0 ]; then
     echo "Unable to connect to update website (internet connection may be down).  Skipping update ..."
 else
-    /usr/bin/wget https://papermc.io/ci/job/Paper-1.13/lastSuccessfulBuild/artifact/paperclip.jar -O /home/pi/minecraft/paperclip.jar
+    /usr/bin/wget https://papermc.io/ci/job/Paper/lastSuccessfulBuild/artifact/paperclip.jar -O /home/pi/minecraft/paperclip.jar
 fi
 
 echo "Starting Minecraft server.  To view window type screen -r minecraft."
