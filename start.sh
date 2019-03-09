@@ -32,6 +32,8 @@ cd /home/pi/minecraft/
 echo "Backing up server (to minecraft/backups folder)"
 tar -pzvcf backups/$(date +%Y.%m.%d.%H.%M.%S).tar.gz world world_nether world_the_end
 
+# TODO update to new download link as announced in Paper Discord
+# https://papermc.io/api/v1/paper/1.12.2/latest/download
 # Update paperclip.jar
 echo "Updating to most recent paperclip version ..."
 # Test internet connectivity first
